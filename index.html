@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS Handson 3</h1>
+<hr size="5px" color="brown">
+
+      <ol>
+        <li><h2>Write one example explaining how you can write a callback function ?
+        </li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          function subtract(a,b){
+            return(a-b);
+        }
+        function Calculate (name,num){
+            console.log(name,num)
+        }
+        Calculate ('EA-19:-',subtract(20,1))
+
+        Output:-EA-19:- 19
+</pre>
+   <hr />  
+   
+
+
+   <li><h2>Write callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+
+    Explain callback hell.
+    Numbers
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          let count = 0;
+   setTimeout (() => {
+       console.log(++count);
+       setTimeout (() => {
+       console.log(++count);
+       setTimeout (() => {
+       console.log(++count);
+       setTimeout (() => {
+       console.log(++count);
+       setTimeout (() => {
+       console.log(++count);
+       setTimeout (() => {
+       console.log(++count);
+       setTimeout (() => {
+       console.log(++count);
+   },7000)
+   },6000)
+   },5000)
+   },4000)
+   },3000)
+   },2000)
+   },1000)
+</pre>
+   <hr /> 
+
+
+
+   <li><h2>Write promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+
+    Numbers
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+     
+    </li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          let count=0
+          setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+          },7000)
+          },6000)
+          },5000)
+          },4000)
+          },3000)
+          },2000)
+          },1000) 
+          
+</pre>
+   <hr /> 
+
+
+
+   <li><h2>Create a promise function accepting a argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed then it should go to reject state and catch the error and print Promise Rejected 
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          const myPromise = (arg) => {
+            return new Promise((resolve, reject) => {
+              if (arg === 'yes') {
+                resolve('Promise Resolved');
+              } else {
+                reject(new Error('Promise Rejected'));
+              }
+            });
+          };
+</pre>
+   <hr /> 
+
+
+
+   <li><h2>Create examples to explain callback function
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          function sum(n1,n2,cb){
+            let sum=n1+n2;
+            cb(sum)
+        }
+        sum(3,4,function cb(s){
+            console.log(s)
+        })
+</pre>
+   <hr />  
+
+
+
+   <li><h2>Create examples to explain callback hell function
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          let count=0;
+
+          setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+              setTimeout(()=>{
+              console.log(++count);
+          },4000)
+          },3000)
+          },2000)
+          },1000)
+</pre>
+   <hr />  
+
+   <li><h2>Create examples to explain promises function
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          const pr = new Promise((res,rej)=>{
+            let n=2;
+            if(n===2){
+                res('number matched')
+            }else{
+            rej('number not matching')}
+        })
+        pr.then((x)=>console.log(x)).catch((err)=>console.log(err))
+</pre>
+   <hr />  
+
+
+
+   <li><h2>Create examples to explain async await function
+  </li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          async function asyncCall() {
+            console.log('calling');
+            const result = await resolveAfter2Seconds();
+            console.log(result);
+           
+          }
+          
+          asyncCall();
+</pre>
+   <hr />  
+
+
+   <li><h2>Create examples to explain promise.all function
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          let pr1 =()  => {
+            return new Promise((res,rej)=>{
+                setTimeout(()=>{
+                res('2nd Promise')
+                
+            },1000)
+        })
+        }
+        let pr2 =()  => {
+            return new Promise((res,rej)=>{
+                setTimeout(()=>{
+                res('3rd Promise')
+                
+            },2000)
+        })
+        }
+        
+        Promise.all([pr1()],[pr2()]).then((result)=>{
+            console.log(result)
+        })
+</pre>
+   <hr />  
+      </ol>
+    
+    
+  </body>
+</html>
